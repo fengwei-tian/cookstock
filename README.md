@@ -23,7 +23,37 @@ Using the YahooFinance API, cookStock pulls stock data automatically for analysi
 Here is an example of TSLA's volatility contraction pattern
 ![Figure_1](https://user-images.githubusercontent.com/25359807/114505746-b0be2700-9be5-11eb-9347-dbcc2351158f.png)
 
-Usage Instructions
+## Installation
+
+1. Clone the repository and initialize its submodule:
+
+```bash
+ git clone <repo-url>
+ cd cookstock
+ git submodule update --init --recursive
+```
+
+2. Create the Conda environment using the file that matches your platform:
+
+```bash
+ conda env create -f env_mac.yml      # macOS
+ conda env create -f env_ubuntu.yml   # Ubuntu
+ conda env create -f cookStock_env.yaml  # generic
+```
+
+3. Activate the environment:
+
+```bash
+ conda activate cookStock
+```
+
+4. Install additional Python packages used by `cookstock_askgpt.py`:
+
+```bash
+ pip install openai finnhub-python
+```
+
+## Usage Instructions
 batch mode:
 1. Run cookStockPipeline.py to perform both stage 2 template screening and apply contraction pattern detection on the selected stocks.
 2. Run cookstock_askgpt.py to perform news extraction and gpt review.
